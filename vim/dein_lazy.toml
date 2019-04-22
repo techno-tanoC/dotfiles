@@ -1,0 +1,36 @@
+#rust
+[[plugins]]
+repo = 'rust-lang/rust.vim'
+on_ft = 'rust'
+
+# ruby
+[[plugins]]
+repo = 'tpope/vim-endwise'
+on_ft = 'ruby'
+
+# elixir
+[[plugins]]
+repo = 'elixir-lang/vim-elixir'
+on_ft = 'elixir'
+
+# haskell
+[[plugins]]
+repo = 'neovimhaskell/haskell-vim.git'
+on_ft = 'haskell'
+
+# scala
+[[plugins]]
+repo = 'derekwyatt/vim-scala'
+on_ft = 'scala'
+
+# slim
+# autocmd BufRead,BufNewFile *.slim setfiletype slimしておく
+[[plugins]]
+repo = 'slim-template/vim-slim'
+on_ft = "slim"
+hook_add = "autocmd BufRead,BufNewFile *.slim setfiletype slim"
+
+# elm
+[[plugins]]
+repo = "ElmCast/elm-vim"
+on_ft = "elm"

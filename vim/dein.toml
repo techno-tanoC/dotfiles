@@ -1,0 +1,49 @@
+[[plugins]]
+repo = 'tomasr/molokai'
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+hook_add = '''
+call unite#custom#source('file_rec', 'ignore_globs', ['./.git', './.bundle', './vendor'])
+
+nnoremap <Space> <Nop>
+nnoremap <Space><Space> :Unite file_rec -start-insert<CR>
+nnoremap <Space>r :Unite file_rec -start-insert -default-action=right<CR>
+nnoremap <Space>f :Unite file_rec -start-insert -default-action=left<CR>
+nnoremap <Space>v :Unite file_rec -start-insert -default-action=vsplit<CR>
+nnoremap <Space>a :Unite file_rec -start-insert -default-action=above<CR>
+nnoremap <Space>b :Unite file_rec -start-insert -default-action=below<CR>
+'''
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+hook_add = '''
+autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+nnoremap <C-e> :NERDTreeToggle<CR>
+'''
+
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+[[plugins]]
+repo = 'kana/vim-submode'
+
+# [[plugins]]
+# repo = 'ctrlpvim/ctrlp.vim'
+# hook_add = '''
+#   " let g:ctrlp_map = '<Space><Space>'
+#   let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+# '''
+
+[[plugins]]
+repo = 'elzr/vim-json'
+
+[[plugins]]
+repo = 'mattn/emmet-vim'

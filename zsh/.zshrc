@@ -90,6 +90,17 @@ alias dc="docker-compose"
 
 alias open="xdg-open"
 
+# trim both sides from FHD
+function crop_from_fhd() {
+  convert -gravity center -crop 1350x1080+0+0  "$1" "$2"
+}
+
+# remove chrome window
+function remove_chrome_window() {
+  #             left, top    right, bottom
+  convert -crop +4+113 -crop -4-4 "$1" "$2"
+}
+
 # ruby
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"

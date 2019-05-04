@@ -87,21 +87,3 @@ alias drmi="docker rmi"
 function drma() { docker rm `docker ps -aq` }
 function drmia() { docker rmi `docker images -f "dangling=true" -q` }
 alias dc="docker-compose"
-
-alias open="xdg-open"
-
-# ruby
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
-alias be="bundle exec"
-alias bf="bundle exec foreman run"
-alias biv="bundle install --path vendor/bundle --jobs=4"
-
-# asdf
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
-
-# node
-export PATH="./node_modules/.bin/:$PATH"
-export PATH="$(npm bin -g 2> /dev/null)/:$PATH"

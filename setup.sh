@@ -4,7 +4,7 @@
 ln -s ~/dotfiles/git/.gitconfig ~/.gitconfig
 
 # zsh
-ln -s ~/dotfiles/zsh/.zshrc ~/.zshrc
+ln -sf ~/dotfiles/zsh/.zshrc ~/.zshrc
 # ln -s ~/dotfiles/zsh/ubuntu.zshrc ~/.zshrc
 
 # vim
@@ -19,4 +19,4 @@ ln -s ~/dotfiles/vim/dein.toml ~/.vim/dein.toml
 ln -s ~/dotfiles/vim/dein_lazy.toml ~/.vim/dein_lazy.toml
 
 # vlc
-ln -s ~/dotfiles/vlc/vlcrc ~/.config/vlc/vlcrc
+ln -sf ~/dotfiles/vlc/vlcrc ~/.config/vlc/vlcrc

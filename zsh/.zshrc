@@ -106,3 +106,7 @@ export PATH="./node_modules/.bin/:$PATH"
 export PATH="$(npm bin -g 2> /dev/null)/:$PATH"
 
 alias open="xdg-open"
+
+function best-youtube() {
+  youtube-dl --merge-output-format mp4 -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best" $1
+}

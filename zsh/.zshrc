@@ -89,6 +89,11 @@ function drma() { docker rm `docker ps -aq` }
 function drmia() { docker rmi `docker images -f "dangling=true" -q` }
 alias dc="docker-compose"
 
+# kube
+alias kc="kubectl"
+alias kx="kubectx"
+alias kn="kubens"
+
 # ruby
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"

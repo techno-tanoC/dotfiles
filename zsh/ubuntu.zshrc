@@ -63,6 +63,7 @@ function git_current_branch() {
   echo ${ref#refs/heads/}
 }
 
+# git
 alias gi="git init"
 alias gs="git status"
 alias ga="git add"
@@ -74,6 +75,7 @@ alias gcob="git checkout -b"
 alias giff="git diff"
 alias giffc="git diff --cached"
 function gpo() { git push origin `git_current_branch` }
+function gop() { git pull origin `git_current_branch` }
 function gpfo() { git push -f origin `git_current_branch` }
 function gpl() { git push gitlab `git_current_branch` }
 

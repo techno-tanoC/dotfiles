@@ -63,6 +63,7 @@ function git_current_branch() {
   echo ${ref#refs/heads/}
 }
 
+# git
 alias gi="git init"
 alias gs="git status"
 alias ga="git add"

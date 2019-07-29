@@ -1,6 +1,8 @@
 #!/bin/sh
 
 # git
+mkdir -p ~/.config/git/
+ln -s ~/dotfiles/git/ignore ~/.config/git/ignore
 ln -s ~/dotfiles/git/.gitconfig ~/.gitconfig
 
 # zsh

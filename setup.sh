@@ -20,3 +20,19 @@ ln -s ~/dotfiles/vim/dein_lazy.toml ~/.vim/dein_lazy.toml
 
 # vlc
 ln -sf ~/dotfiles/vlc/vlcrc ~/.config/vlc/vlcrc
+
+# code
+function link_code() {
+  if [ `uname` = "Darwin" ] ; then
+    ln -s ~/dotfiles/vscode/settings.json ~/Library/Application Support/Code/User/settings.json
+  elif [ `lsb_release -is` = "ManjaroLinux" ] ; then
+    ln -s ~/dotfiles/vscode/settings.json ~/.config/Code/User/settings.json
+  elif [ `lsb_release -is` = "Ubuntu" ] ; then
+    ln -s ~/dotfiles/vscode/settings.json ~/.config/Code/User/settings.json
+  else
+    echo "unsupported"
+    exit 1
+  fi
+}
+
+link_code

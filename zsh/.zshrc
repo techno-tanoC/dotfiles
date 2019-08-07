@@ -90,11 +90,20 @@ function drma() { docker rm `docker ps -aq` }
 function drmia() { docker rmi `docker images -f "dangling=true" -q` }
 alias dc="docker-compose"
 
+# asdf
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
+
 # kube
 alias kc="kubectl"
 alias kx="kubectx"
 alias kn="kubens"
-source <(kubectl completion zsh)
+if type kubectl > /dev/null 2>&1; then
+  source <(kubectl completion zsh)
+fi
+if type helm > /dev/null 2>&1; then
+  source <(helm completion zsh)
+fi
 
 # ruby
 export PATH="$HOME/.rbenv/bin:$PATH"
@@ -103,10 +112,6 @@ eval "$(rbenv init -)"
 alias be="bundle exec"
 alias bf="bundle exec foreman run"
 alias biv="bundle install --path vendor/bundle --jobs=4"
-
-# asdf
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
 
 # node
 export PATH="./node_modules/.bin/:$PATH"

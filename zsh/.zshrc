@@ -16,6 +16,17 @@ fi
 alias rm="nocorrect rm"
 alias la="ls -a"
 
+# function get_cluster_short() {
+#   echo "$1" | awk -F '_' '{print $NF}'
+# }
+#
+# source /usr/local/Cellar/kube-ps1/0.7.0/share/kube-ps1.sh
+# export KUBE_PS1_PREFIX=
+# export KUBE_PS1_SUFFIX=' '
+# export KUBE_PS1_SYMBOL_ENABLE=false
+# export PROMPT='$(kube_ps1)'$PROMPT
+# export KUBE_PS1_CLUSTER_FUNCTION=get_cluster_short
+
 ## enterをおした時にls & git status
 function do_enter() {
     if [ -n "$BUFFER" ]; then

@@ -13,8 +13,10 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+unalias ll
 alias rm="nocorrect rm"
-alias la="ls -a"
+alias la="ls -alh"
+alias lq="ls -Qm"
 alias open="xdg-open"
 alias pbcopy="xsel --clipboard --input"
 alias pbpaste="xsel --clipboard --output"

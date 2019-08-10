@@ -15,6 +15,9 @@ fi
 # Customize to your needs...
 alias rm="nocorrect rm"
 alias la="ls -a"
+alias open="xdg-open"
+alias pbcopy="xsel --clipboard --input"
+alias pbpaste="xsel --clipboard --output"
 
 ## enterをおした時にls & git status
 function do_enter() {
@@ -118,8 +121,6 @@ alias biv="bundle install --path vendor/bundle --jobs=4"
 # node
 export PATH="./node_modules/.bin/:$PATH"
 export PATH="$(npm bin -g 2> /dev/null)/:$PATH"
-
-alias open="xdg-open"
 
 function best-youtube() {
   youtube-dl --merge-output-format mp4 -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best" $1

@@ -5,6 +5,8 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
+# zmodload zsh/zprof && zprof
+
 . /etc/profile.d/vte.sh
 
 # Source Prezto.
@@ -127,3 +129,7 @@ export PATH="$(npm bin -g 2> /dev/null)/:$PATH"
 function best-youtube() {
   youtube-dl --merge-output-format mp4 -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best" $1
 }
+
+# if (which zprof > /dev/null 2>&1) ;then
+#   zprof | less
+# fi

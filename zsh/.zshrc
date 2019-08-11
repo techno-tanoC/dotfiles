@@ -104,19 +104,30 @@ alias dc="docker-compose"
 alias kc="kubectl"
 alias kx="kubectx"
 alias kn="kubens"
-if type kubectl > /dev/null 2>&1; then
+kubectl() {
+  unfunction "$0"
   source <(kubectl completion zsh)
-fi
-if type kubesec > /dev/null 2>&1; then
+  $0 "$@"
+}
+kubesec() {
+  unfunction "$0"
   source <(kubesec completion zsh)
-fi
-if type helm > /dev/null 2>&1; then
+  $0 "$@"
+}
+helm() {
+  unfunction "$0"
   source <(helm completion zsh)
-fi
+  $0 "$@"
+}
 
 # ruby
 export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/shims:${PATH}"
+rbenv() {
+  unfunction "$0"
+  eval "$(rbenv init -)"
+  $0 "$@"
+}
 
 alias be="bundle exec"
 alias bf="bundle exec foreman run"

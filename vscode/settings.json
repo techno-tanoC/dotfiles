@@ -4,7 +4,8 @@
         "editor.tabSize": 2
     },
     "[elixir]": {
-        "editor.tabSize": 2
+        "editor.tabSize": 2,
+        "editor.formatOnSave": true
     },
     "vim.leader": "<space>",
     "vim.normalModeKeyBindingsNonRecursive": [{

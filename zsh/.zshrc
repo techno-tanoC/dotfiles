@@ -7,7 +7,9 @@
 
 # zmodload zsh/zprof && zprof
 
-. /etc/profile.d/vte.sh
+if [ -f /etc/profile.d/vte.sh ]; then
+  . /etc/profile.d/vte.sh
+fi
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then

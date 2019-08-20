@@ -6,8 +6,7 @@ ln -s ~/dotfiles/git/ignore ~/.config/git/ignore
 ln -s ~/dotfiles/git/.gitconfig ~/.gitconfig
 
 # zsh
-ln -sf ~/dotfiles/zsh/.zshrc ~/.zshrc
-# ln -s ~/dotfiles/zsh/ubuntu.zshrc ~/.zshrc
+ln -sf ~/dotfiles/zsh/zshrc ~/.zshrc
 
 # vim
 mkdir -p ~/.vim

@@ -1,5 +1,11 @@
 {
     "workbench.colorTheme": "Dark (Molokai)",
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": true,
+        "strings": true
+    },
     "[ruby]": {
         "editor.tabSize": 2
     },

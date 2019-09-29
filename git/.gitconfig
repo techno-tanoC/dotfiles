@@ -3,6 +3,7 @@
 	email = develop.tanoc@gmail.com
 [core]
 	editor = vim
+	quotepath = false
 [merge]
 	tool = vimdiff
 [push]

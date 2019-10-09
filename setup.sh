@@ -28,6 +28,7 @@ function link_code() {
     ln -s ~/dotfiles/vscode/settings.json ~/Library/Application Support/Code/User/settings.json
   elif [ `lsb_release -is` = "ManjaroLinux" ] ; then
     ln -s ~/dotfiles/vscode/settings.json ~/.config/Code/User/settings.json
+    ln -s ~/dotfiles/vscode/snippets ~/.config/Code/User/snippets
   elif [ `lsb_release -is` = "Ubuntu" ] ; then
     ln -s ~/dotfiles/vscode/settings.json ~/.config/Code/User/settings.json
     ln -s "~/dotfiles/vscode/snippets" "~/Library/Application Support/Code/User/snippets"

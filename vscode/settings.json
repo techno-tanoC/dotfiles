@@ -1,5 +1,6 @@
 {
     "workbench.colorTheme": "Dark (Molokai)",
+    "editor.acceptSuggestionOnEnter": "off",
     "editor.quickSuggestions": {
         "other": true,
         "comments": true,

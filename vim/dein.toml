@@ -18,9 +18,9 @@ nnoremap <Space>b :Unite file_rec -start-insert -default-action=below<CR>
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 hook_add = '''
+nnoremap <C-e> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
 " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-nnoremap <C-e> :NERDTreeToggle<CR>
 '''
 
 [[plugins]]

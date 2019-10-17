@@ -9,6 +9,7 @@
     "[ruby]": {
         "editor.tabSize": 2
     },
+    "ruby.intellisense": "rubyLocate",
     "[elixir]": {
         "editor.formatOnSave": true
     },
@@ -43,5 +44,4 @@
             "commands": ["workbench.action.moveEditorToPreviousGroup"]
         }
     ],
-    "editor.acceptSuggestionOnEnter": "off"
 }

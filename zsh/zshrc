@@ -17,14 +17,30 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+export EDITOR=vi
+
 bindkey -v
-unalias ll
+bindkey '^A' beginning-of-line
+bindkey '^E' end-of-line
+bindkey '^F' forward-word
+bindkey '^B' backward-word
+
 alias rm="nocorrect rm"
-alias la="ls -alh"
+alias la="ls -a"
+alias ll="ls -alh"
 alias lq="ls -Qm"
-alias open="xdg-open"
-alias pbcopy="xsel --clipboard --input"
-alias pbpaste="xsel --clipboard --output"
+
+exists() { command -v "$1" > /dev/null; }
+
+if ! exists open ; then
+  alias open="xdg-open"
+fi
+if ! exists pbcopy ; then
+  alias pbcopy="xsel --clipboard --input"
+fi
+if ! exists pbpaste ; then
+  alias pbpaste="xsel --clipboard --output"
+fi
 
 ## enterをおした時にls & git status
 function do_enter() {
@@ -148,6 +164,10 @@ function best-youtube() {
   youtube-dl --merge-output-format mp4 -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best" $1
 }
 
-# if (which zprof > /dev/null 2>&1) ;then
-#   zprof | less
-# fi
+function git-name-date-hash() {
+  n=$(basename $(git rev-parse --show-toplevel))
+  d=$(date '+%F')
+  h=$(git log --pretty=format:'%h' | head -n 1)
+  echo "${n}-${d}-${h}"
+}
+

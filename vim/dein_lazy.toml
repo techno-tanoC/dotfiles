@@ -34,3 +34,4 @@ hook_add = "autocmd BufRead,BufNewFile *.slim setfiletype slim"
 [[plugins]]
 repo = "ElmCast/elm-vim"
 on_ft = "elm"
+

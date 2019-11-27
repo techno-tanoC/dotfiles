@@ -31,6 +31,10 @@ alias la="ls -alh"
 alias ll="ls -a"
 alias lq="ls -Qm"
 
+function base64_from_stdin() {
+  echo $1 | base64 -
+}
+
 function hash() {
   sha1sum $1 | awk '{ print $1 }'
 }

@@ -17,6 +17,7 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+export PATH=$HOME/bin:$PATH
 export EDITOR=vi
 
 bindkey -v
@@ -26,9 +27,20 @@ bindkey '^F' forward-word
 bindkey '^B' backward-word
 
 alias rm="nocorrect rm"
-alias la="ls -a"
-alias ll="ls -alh"
+alias la="ls -alh"
+alias ll="ls -a"
 alias lq="ls -Qm"
+
+function hash() {
+  sha1sum $1 | awk '{ print $1 }'
+}
+
+function git-name-date-hash() {
+  n=$(basename $(git rev-parse --show-toplevel))
+  d=$(date '+%F')
+  h=$(git log --pretty=format:'%h' | head -n 1)
+  echo "${n}-${d}-${h}"
+}
 
 exists() { command -v "$1" > /dev/null; }
 
@@ -113,6 +125,7 @@ alias drm="docker rm"
 alias drmi="docker rmi"
 function drma() { docker rm `docker ps -aq` }
 function drmia() { docker rmi `docker images -f "dangling=true" -q` }
+function drmva() { docker volume rm `docker volume ls -qf "dangling=true"` }
 alias dc="docker-compose"
 
 # asdf

@@ -131,6 +131,7 @@ function drma() { docker rm `docker ps -aq` }
 function drmia() { docker rmi `docker images -f "dangling=true" -q` }
 function drmva() { docker volume rm `docker volume ls -qf "dangling=true"` }
 alias dc="docker-compose"
+alias dcra="docker-compose run --rm app"
 
 # asdf
 if [ -f $HOME/.asdf/asdf.sh ]; then

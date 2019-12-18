@@ -11,7 +11,7 @@
     },
     "ruby.intellisense": "rubyLocate",
     "[elixir]": {
-        "editor.formatOnSave": true
+        "editor.formatOnSave": false
     },
     "elixirLS.dialyzerEnabled": false,
     "vim.leader": "<space>",

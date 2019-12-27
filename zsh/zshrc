@@ -26,7 +26,7 @@ bindkey '^E' end-of-line
 bindkey '^F' forward-word
 bindkey '^B' backward-word
 
-dir=$(dirname "$(readlink -f $0)")
+dir=~/dotfiles/zsh
 source "${dir}/alias.sh"
 source "${dir}/peco.sh"
 source "${dir}/lang.sh"

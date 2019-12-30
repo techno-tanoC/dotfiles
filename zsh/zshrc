@@ -32,9 +32,3 @@ source "${dir}/peco.sh"
 source "${dir}/lang.sh"
 source "${dir}/tool.sh"
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/tech/.gcloud/path.zsh.inc' ]; then . '/home/tech/.gcloud/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/tech/.gcloud/completion.zsh.inc' ]; then . '/home/tech/.gcloud/completion.zsh.inc'; fi
-

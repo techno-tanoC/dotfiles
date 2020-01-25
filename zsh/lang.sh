@@ -17,7 +17,7 @@ rbenv() {
 
 alias be="bundle exec"
 alias bf="bundle exec foreman run"
-alias biv="bundle install --path vendor/bundle --jobs=4"
+alias biv="bundle install --jobs=4"
 
 # node
 export PATH="./node_modules/.bin/:$PATH"

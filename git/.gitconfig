@@ -10,4 +10,6 @@
 	default = current
 [alias]
 	ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
+[core]
+  excludesfile = ~/.gitignore_global
 

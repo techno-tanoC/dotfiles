@@ -47,5 +47,6 @@
             "commands": ["workbench.action.moveEditorToPreviousGroup"]
         }
     ],
+    "explorer.confirmDragAndDrop": false,
 }
 

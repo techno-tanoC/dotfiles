@@ -37,6 +37,7 @@ function drmia() { docker rmi `docker images -f "dangling=true" -q` }
 function drmva() { docker volume rm `docker volume ls -qf "dangling=true"` }
 alias dc="docker-compose"
 alias dcra="docker-compose run --rm app"
+alias dcea="docker-compose exec app"
 
 # kube
 alias kc="kubectl"

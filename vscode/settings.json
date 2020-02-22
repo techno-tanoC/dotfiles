@@ -14,9 +14,6 @@
         "editor.formatOnSave": false
     },
     "elixirLS.dialyzerEnabled": false,
-    "[haskell]": {
-        "editor.tabSize": 2
-    },
     "vim.leader": "<space>",
     "vim.normalModeKeyBindingsNonRecursive": [{
             "before": ["leader", "leader"],

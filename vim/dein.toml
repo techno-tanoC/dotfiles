@@ -43,6 +43,9 @@ repo = 'kana/vim-submode'
 # '''
 
 [[plugins]]
+repo = 'zxqfl/tabnine-vim'
+
+[[plugins]]
 repo = 'elzr/vim-json'
 
 [[plugins]]

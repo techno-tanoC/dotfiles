@@ -59,3 +59,5 @@ helm() {
   $0 "$@"
 }
 
+# terraform
+alias tf="terraform"

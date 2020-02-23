@@ -23,7 +23,7 @@ ln -s ~/dotfiles/vim/dein_lazy.toml ~/.vim/dein_lazy.toml
 ln -sf ~/dotfiles/vlc/vlcrc ~/.config/vlc/vlcrc
 
 # code
-function link_code() {
+link_code() {
   if [ `uname` = "Darwin" ] ; then
     ln -s ~/dotfiles/vscode/settings.json ~/Library/Application Support/Code/User/settings.json
   elif [ `lsb_release -is` = "ManjaroLinux" ] ; then

@@ -40,7 +40,7 @@ alias dcra="docker-compose run --rm app"
 alias dcea="docker-compose exec app"
 
 # kube
-alias kc="kubectl"
+alias k="kubectl"
 alias kx="kubectx"
 alias kn="kubens"
 kubectl() {

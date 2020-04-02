@@ -32,3 +32,30 @@ source "${dir}/peco.sh"
 source "${dir}/lang.sh"
 source "${dir}/tool.sh"
 
+source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+
+function get_cluster_short() {
+  echo "$1" | cut -d . -f1
+}
+
+KUBE_PS1_CLUSTER_FUNCTION=get_cluster_short
+
+function git_branch() {
+  local ref
+  ref=$(command git symbolic-ref --quiet HEAD 2> /dev/null)
+  local ret=$?
+  if [[ $ret != 0 ]]; then
+    if [[ $ret == 128 ]]; then
+      echo ' '
+    else
+      ref=$(command git rev-parse --short HEAD 2> /dev/null)
+      echo ' (' ${ref#refs/heads/} ') '
+    fi
+  else
+    echo ' (' ${ref#refs/heads/} ') '
+  fi
+}
+
+# PROMPT='$(kube_ps1)'$PROMPT
+PROMPT='%D %T$(git_branch)$(kube_ps1)
+%~${editor_info[keymap]} '

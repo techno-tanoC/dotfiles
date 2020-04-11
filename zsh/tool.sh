@@ -45,7 +45,7 @@ alias kx="kubectx"
 alias kn="kubens"
 kubectl() {
   unfunction "$0"
-  source <(kubectl completion zsh)
+  source <(kubectl completion zsh | sed '/"-f"/d')
   $0 "$@"
 }
 kubesec() {

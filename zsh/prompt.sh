@@ -36,5 +36,10 @@ function git-current-branch {
 # プロンプトが表示されるたびにプロンプト文字列を評価、置換する
 setopt prompt_subst
 
-PROMPT='%D %T$(git-current-branch)$(kube_ps1)
+if [ -f "${dir}/kube-ps1.sh" ]; then
+  PROMPT='%D %T$(git-current-branch)$(kube_ps1)
 ${SSH_TTY:+"%F{9}%n%f%F{7}@%f%F{3}%m%f "}%~${editor_info[keymap]} '
+else
+  PROMPT='%D %T$(git-current-branch)
+${SSH_TTY:+"%F{9}%n%f%F{7}@%f%F{3}%m%f "}%~${editor_info[keymap]} '
+fi

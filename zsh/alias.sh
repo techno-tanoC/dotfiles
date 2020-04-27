@@ -44,4 +44,3 @@ function gcp-project() {
 function best-youtube() {
   youtube-dl --merge-output-format mp4 -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best" $1
 }
-

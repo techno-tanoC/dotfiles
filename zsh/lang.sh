@@ -22,5 +22,4 @@ alias bf="bundle exec foreman run"
 alias biv="bundle install --jobs=4"
 
 # node
-export PATH="./node_modules/.bin/:$PATH"
 export PATH="$(npm bin -g 2> /dev/null)/:$PATH"

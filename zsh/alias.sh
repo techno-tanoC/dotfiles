@@ -1,6 +1,6 @@
 alias rm="nocorrect rm"
 alias la="ls -alh"
-alias ll="ls -a"
+alias ll="ls -al"
 alias lq="ls -Qm"
 
 alias openssl_connect="echo 'Q' | openssl s_client -connect"

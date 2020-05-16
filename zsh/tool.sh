@@ -61,3 +61,7 @@ helm() {
 
 # terraform
 alias tf="terraform"
+
+# aws
+autoload bashcompinit && bashcompinit
+complete -C '/usr/local/aws/bin/aws_completer' aws

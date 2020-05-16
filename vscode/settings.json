@@ -1,5 +1,6 @@
 {
     "workbench.colorTheme": "Dark (Molokai)",
+    "workbench.iconTheme": "material-icon-theme",
     "editor.acceptSuggestionOnEnter": "off",
     "editor.quickSuggestions": {
         "other": true,
@@ -45,6 +46,12 @@
         }, {
             "before": ["leader", "<C-h>"],
             "commands": ["workbench.action.moveEditorToPreviousGroup"]
+        }, {
+            "before": ["<C-e>"],
+            "commands": ["workbench.action.toggleSidebarVisibility"]
+        }, {
+            "before": ["<C-n>"],
+            "commands": ["workbench.action.files.newUntitledFile"]
         }
     ],
     "explorer.confirmDragAndDrop": false,

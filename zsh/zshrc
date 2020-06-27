@@ -18,7 +18,7 @@ fi
 
 # Customize to your needs...
 export PATH=$HOME/bin:$PATH
-export EDITOR=vi
+export EDITOR=vim
 
 bindkey -v
 bindkey '^A' beginning-of-line

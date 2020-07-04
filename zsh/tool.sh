@@ -26,6 +26,9 @@ function gpfo() { git push -f origin `git_current_branch` }
 function gpl() { git push gitlab `git_current_branch` }
 
 # docker
+export COMPOSE_DOCKER_CLI_BUILD=1
+export DOCKER_BUILDKIT=1
+
 alias di="docker images"
 alias dps="docker ps"
 alias dpsa="docker ps -a"

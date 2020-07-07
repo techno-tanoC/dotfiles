@@ -41,6 +41,8 @@ function drmva() { docker volume rm `docker volume ls -qf "dangling=true"` }
 alias dc="docker-compose"
 alias dcra="docker-compose run --rm app"
 alias dcea="docker-compose exec app"
+function dme() { eval $(docker-machine env $1) }
+function dmu() { eval $(docker-machine env -u) }
 
 # kube
 alias k="kubectl"

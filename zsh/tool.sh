@@ -66,5 +66,6 @@ helm() {
 alias tf="terraform"
 
 # aws
+# https://docs.aws.amazon.com/ja_jp/cli/latest/userguide/cli-configure-completion.html
 autoload bashcompinit && bashcompinit
-complete -C '/usr/local/aws/bin/aws_completer' aws
+complete -C $(which aws_completer) aws

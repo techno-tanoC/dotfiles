@@ -33,6 +33,3 @@ source "${dir}/lang.sh"
 source "${dir}/tool.sh"
 source "${dir}/prompt.sh"
 
-if [ -f "${dir}/kube-ps1.sh" ]; then
-  source "${dir}/kube-ps1.sh"
-fi

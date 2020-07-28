@@ -13,7 +13,7 @@ function git_current_branch() {
 alias gi="git init"
 alias gs="git status"
 alias ga="git add"
-alias gaa="git add ."
+alias gaa="git add --all"
 alias gc="git commit"
 alias gcm="git commit -m"
 alias gco="git checkout"

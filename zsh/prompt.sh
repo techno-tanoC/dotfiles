@@ -39,9 +39,12 @@ setopt prompt_subst
 if [ -f "/opt/kube-ps1/kube-ps1.sh" ]; then
   source /opt/kube-ps1/kube-ps1.sh
 fi
+if [ -f "/usr/local/opt/kube-ps1/share/kube-ps1.sh" ]; then
+  source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+fi
 
 which kube_ps1 > /dev/null
-if [ $? -ne 0 ]; then
+if [ $? -eq 0 ]; then
   PROMPT='%D %T$(git-current-branch)$(kube_ps1)
 ${SSH_TTY:+"%F{9}%n%f%F{7}@%f%F{3}%m%f "}%~${editor_info[keymap]} '
 else

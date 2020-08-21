@@ -48,6 +48,8 @@ function dmu() { eval $(docker-machine env -u) }
 alias k="kubectl"
 alias kx="kubectx"
 alias kn="kubens"
+alias k-debug="k run -it debug --image=techno/nettool --rm --restart=Never -- ash"
+
 kubectl() {
   unfunction "$0"
   source <(kubectl completion zsh | sed '/"-f"/d')

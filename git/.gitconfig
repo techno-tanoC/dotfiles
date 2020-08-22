@@ -10,4 +10,5 @@
 	default = current
 [alias]
 	ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
-
+[pull]
+	rebase = false

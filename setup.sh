@@ -31,7 +31,7 @@ link_code() {
     ln -s ~/dotfiles/vscode/snippets ~/.config/Code/User/snippets
   elif [ `lsb_release -is` = "Ubuntu" ] ; then
     ln -s ~/dotfiles/vscode/settings.json ~/.config/Code/User/settings.json
-    ln -s "~/dotfiles/vscode/snippets" "~/Library/Application Support/Code/User/snippets"
+    ln -s ~/dotfiles/vscode/snippets ~/.config/Code/User/snippets
   else
     echo "unsupported"
     exit 1

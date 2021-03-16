@@ -4,7 +4,11 @@ alias ll="ls -al"
 alias lq="ls -Qm"
 alias rgf="rg --files | rg"
 
-alias openssl_connect="echo 'Q' | openssl s_client -connect"
+alias openssl-connect="echo 'Q' | openssl s_client -connect"
+
+# paccache -rk5: 5世代を残してキャッシュを消す
+# paccache -ruk0: アンインストールされたものの全世代を消す
+alias yay-upgrade="yay -Syu; paccache -rk5; paccache -ruk0"
 
 function base64_from_stdin() {
   echo $1 | base64 -

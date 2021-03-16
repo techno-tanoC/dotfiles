@@ -28,6 +28,7 @@ function gpl() { git push gitlab `git_current_branch` }
 # docker
 export COMPOSE_DOCKER_CLI_BUILD=1
 export DOCKER_BUILDKIT=1
+export BUILDKIT_PROGRESS=plain
 
 alias di="docker images"
 alias dps="docker ps"
@@ -39,6 +40,7 @@ function drma() { docker rm `docker ps -aq` }
 function drmia() { docker rmi `docker images -f "dangling=true" -q` }
 function drmva() { docker volume rm `docker volume ls -qf "dangling=true"` }
 alias dc="docker-compose"
+alias dcr="docker-compose run --rm"
 alias dcra="docker-compose run --rm app"
 alias dcea="docker-compose exec app"
 function dme() { eval $(docker-machine env $1) }

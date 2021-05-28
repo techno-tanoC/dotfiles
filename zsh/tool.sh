@@ -77,3 +77,9 @@ alias tf="terraform"
 # https://docs.aws.amazon.com/ja_jp/cli/latest/userguide/cli-configure-completion.html
 autoload bashcompinit && bashcompinit
 complete -C $(which aws_completer) aws
+
+# gcloud
+alias g="gcloud"
+
+source "$(asdf where gcloud)/path.zsh.inc"
+source "$(asdf where gcloud)/completion.zsh.inc"

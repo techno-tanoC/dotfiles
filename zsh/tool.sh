@@ -22,7 +22,7 @@ alias giff="git diff"
 alias giffc="git diff --cached"
 function gpo() { git push origin `git_current_branch` }
 function gop() { git pull origin `git_current_branch` }
-function gpfo() { git push -f origin `git_current_branch` }
+function gpfo() { git push --force origin `git_current_branch` }
 function gpl() { git push gitlab `git_current_branch` }
 
 # docker
@@ -71,7 +71,7 @@ helm() {
 }
 
 # terraform
-alias tf="terraform"
+alias t="terraform"
 
 # aws
 # https://docs.aws.amazon.com/ja_jp/cli/latest/userguide/cli-configure-completion.html

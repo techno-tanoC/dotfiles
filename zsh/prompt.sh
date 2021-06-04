@@ -36,8 +36,11 @@ function git-current-branch {
 # プロンプトが表示されるたびにプロンプト文字列を評価、置換する
 setopt prompt_subst
 
+if [ -f "$HOME/bin/kube-ps1.sh" ]; then
+  source "$HOME/bin/kube-ps1.sh"
+fi
 if [ -f "/opt/kube-ps1/kube-ps1.sh" ]; then
-  source /opt/kube-ps1/kube-ps1.sh
+  source "/opt/kube-ps1/kube-ps1.sh"
 fi
 if [ -f "/usr/local/opt/kube-ps1/share/kube-ps1.sh" ]; then
   source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"

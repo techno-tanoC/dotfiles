@@ -27,9 +27,8 @@ bindkey '^F' forward-word
 bindkey '^B' backward-word
 
 dir=~/dotfiles/zsh
+source "${dir}/tool.sh"
 source "${dir}/alias.sh"
 source "${dir}/peco.sh"
-source "${dir}/lang.sh"
-source "${dir}/tool.sh"
 source "${dir}/prompt.sh"
 

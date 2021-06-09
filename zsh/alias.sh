@@ -46,6 +46,72 @@ function gcp-project() {
   fi
 }
 
+
+# git
+function git_current_branch() {
+  local ref
+  ref=$(command git symbolic-ref --quiet HEAD 2> /dev/null)
+  local ret=$?
+  if [[ $ret != 0 ]]; then
+    [[ $ret == 128 ]] && return  # no git repo.
+    ref=$(command git rev-parse --short HEAD 2> /dev/null) || return
+  fi
+  echo ${ref#refs/heads/}
+}
+
+alias gi="git init"
+alias gs="git status"
+alias ga="git add"
+alias gaa="git add --all"
+alias gc="git commit"
+alias gcm="git commit -m"
+alias gco="git checkout"
+alias gcob="git checkout -b"
+alias giff="git diff"
+alias giffc="git diff --cached"
+function gpo() { git push origin `git_current_branch` }
+function gop() { git pull origin `git_current_branch` }
+function gpfo() { git push --force origin `git_current_branch` }
+function gpl() { git push gitlab `git_current_branch` }
+
+# docker
+alias di="docker images"
+alias dps="docker ps"
+alias dpsa="docker ps -a"
+alias dr="docker run"
+alias drm="docker rm"
+alias drmi="docker rmi"
+function drma() { docker rm `docker ps -aq` }
+function drmia() { docker rmi `docker images -f "dangling=true" -q` }
+function drmva() { docker volume rm `docker volume ls -qf "dangling=true"` }
+alias dc="docker-compose"
+alias dcr="docker-compose run --rm"
+alias dcra="docker-compose run --rm app"
+alias dce="docker-compose exec"
+alias dcea="docker-compose exec app"
+function dme() { eval $(docker-machine env $1) }
+function dmu() { eval $(docker-machine env -u) }
+
+# ruby
+alias be="bundle exec"
+alias bf="bundle exec foreman run"
+alias biv="bundle install --jobs=4"
+
+# k8s
+alias k="kubectl"
+alias kx="kubectx"
+alias kn="kubens"
+alias k-debug="k run -it debug --image=techno/nettool --rm --restart=Never -- ash"
+alias kind-create="kind create cluster --config ~/k8s/cluster.yaml"
+alias kind-delete="kind delete cluster"
+
+# terraform
+alias t="terraform"
+
+# gcloud
+alias g="gcloud"
+
+# youtube-dl
 function best-youtube() {
   youtube-dl --merge-output-format mp4 -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best" $1
 }

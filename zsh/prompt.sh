@@ -33,8 +33,15 @@ function git-current-branch {
   echo " ${branch_status}[$branch_name]%f "
 }
 
-# プロンプトが表示されるたびにプロンプト文字列を評価、置換する
 setopt prompt_subst
+
+re-prompt() {
+    zle .reset-prompt
+    zle .accept-line
+}
+
+# コマンド実行時にプロンプトを再表示
+zle -N accept-line re-prompt
 
 if [ -f "$HOME/bin/kube-ps1.sh" ]; then
   source "$HOME/bin/kube-ps1.sh"
@@ -48,10 +55,10 @@ fi
 
 which kube_ps1 > /dev/null
 if [ $? -eq 0 ]; then
-  PROMPT='%D %T$(git-current-branch)$(kube_ps1)
+  PROMPT='%D{%Y-%m-%d %H:%M:%S} $(git-current-branch)$(kube_ps1)
 ${SSH_TTY:+"%F{9}%n%f%F{7}@%f%F{3}%m%f "}%~${editor_info[keymap]} '
 else
-  PROMPT='%D %T$(git-current-branch)
+  PROMPT='%D{%Y-%m-%d %H:%M:%S} $(git-current-branch)
 ${SSH_TTY:+"%F{9}%n%f%F{7}@%f%F{3}%m%f "}%~${editor_info[keymap]} '
 fi
 

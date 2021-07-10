@@ -3,6 +3,9 @@ alias la="ls -alh"
 alias ll="ls -al"
 alias lq="ls -Qm"
 alias rgf="rg --files | rg"
+function color {
+  grep --color -E "$1|$" $2
+}
 
 alias openssl-connect="echo 'Q' | openssl s_client -connect"
 

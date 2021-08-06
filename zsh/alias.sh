@@ -7,7 +7,7 @@ function color {
   grep --color -E "$1|$" $2
 }
 
-alias openssl-connect="echo 'Q' | openssl s_client -connect"
+alias openssl-connect="echo | openssl s_client -connect"
 
 # paccache -rk5: 5世代を残してキャッシュを消す
 # paccache -ruk0: アンインストールされたものの全世代を消す

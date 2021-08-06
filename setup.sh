@@ -16,6 +16,7 @@ sh ./installer.sh ~/.vim/repos
 rm installer.sh
 
 ln -sf ~/dotfiles/vim/.vimrc ~/.vimrc
+ln -sf ~/dotfiles/vim/.ideavimrc ~/.ideavimrc
 ln -sf ~/dotfiles/vim/dein.toml ~/.vim/dein.toml
 ln -sf ~/dotfiles/vim/dein_lazy.toml ~/.vim/dein_lazy.toml
 

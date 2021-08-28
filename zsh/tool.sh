@@ -50,3 +50,13 @@ source "$(asdf where gcloud)/completion.zsh.inc"
 
 # node
 export PATH="$(npm bin -g 2> /dev/null)/:$PATH"
+
+# go
+# https://zenn.dev/tennashi/articles/3b87a8d924bc9c43573e
+export GO111MODULE=on
+export GOBIN=$HOME/bin/go
+export GOMODCACHE=$HOME/.cache/go_mod
+export PATH=$GOBIN:$PATH
+
+# direnv
+eval "$(direnv hook zsh)"

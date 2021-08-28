@@ -31,4 +31,3 @@ source "${dir}/tool.sh"
 source "${dir}/alias.sh"
 source "${dir}/peco.sh"
 source "${dir}/prompt.sh"
-

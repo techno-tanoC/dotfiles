@@ -18,6 +18,9 @@
     "[yaml]": {
         "editor.tabSize": 2
     },
+    "[rust]": {
+        "editor.tabSize": 4
+    },
     "vim.leader": "<space>",
     "vim.normalModeKeyBindingsNonRecursive": [{
             "before": ["leader", "leader"],

@@ -110,6 +110,7 @@ alias kind-delete="kind delete cluster"
 
 # terraform
 alias t="terraform"
+alias tfmt="terraform fmt -recursive"
 
 # gcloud
 alias g="gcloud"

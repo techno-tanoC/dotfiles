@@ -58,5 +58,6 @@
         }
     ],
     "explorer.confirmDragAndDrop": false,
+    "editor.bracketPairColorization.enabled": true,
 }
 

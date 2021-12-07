@@ -26,7 +26,7 @@ ln -sf ~/dotfiles/vlc/vlcrc ~/.config/vlc/vlcrc
 # code
 link_code() {
   if [ `uname` = "Darwin" ] ; then
-    ln -sf ~/dotfiles/vscode/settings.json ~/Library/Application Support/Code/User/settings.json
+    ln -sf ~/dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
   elif [ `lsb_release -is` = "ManjaroLinux" ] ; then
     ln -sf ~/dotfiles/vscode/settings.json ~/.config/Code/User/settings.json
     ln -sf ~/dotfiles/vscode/snippets ~/.config/Code/User/snippets

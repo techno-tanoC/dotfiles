@@ -78,6 +78,7 @@ function gpfo() { git push --force origin `git_current_branch` }
 function gpl() { git push gitlab `git_current_branch` }
 
 # docker
+alias d="docker"
 alias di="docker images"
 alias dps="docker ps"
 alias dpsa="docker ps -a"

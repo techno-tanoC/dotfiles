@@ -61,4 +61,6 @@
     "editor.bracketPairColorization.enabled": true,
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
+    "dotfiles.repository": "https://github.com/techno-tanoC/dotfiles.git",
+    "dotfiles.installCommand": "~/dotfiles/remote_container/install.sh",
 }

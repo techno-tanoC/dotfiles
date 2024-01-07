@@ -2,7 +2,6 @@ alias rm="nocorrect rm"
 alias mv="nocorrect mv"
 alias la="ls -alh"
 alias ll="ls -al"
-alias lq="ls -Qm"
 
 # paccache -rk5: 5世代を残してキャッシュを消す
 # paccache -ruk0: アンインストールされたものの全世代を消す

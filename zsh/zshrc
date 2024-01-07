@@ -1,0 +1,3 @@
+# Set basic envs
+export PATH=$HOME/bin:$PATH
+export EDITOR=vim

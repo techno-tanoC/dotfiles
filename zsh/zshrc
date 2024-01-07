@@ -9,3 +9,4 @@ export EDITOR=vim
 
 dir=~/dotfiles/zsh
 source "${dir}/alias.sh"
+source "${dir}/tool.sh"

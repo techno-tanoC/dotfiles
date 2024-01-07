@@ -47,7 +47,7 @@ PROMPT='%D{%Y-%m-%d %H:%M:%S} $(git-current-branch)
 ${SSH_TTY:+"%F{9}%n%f%F{7}@%f%F{3}%m%f "}%~${editor_info[keymap]} '
 RPROMPT=''
 
-## enterをおした時にls & git status
+## enterをおした時にgit status
 function do_enter() {
   if [ -n "$BUFFER" ]; then
     zle accept-line

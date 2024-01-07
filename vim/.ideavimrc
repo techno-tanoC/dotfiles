@@ -1,9 +1,0 @@
-set clipboard=unnamed
-
-sethandler <C-V> i:ide v:vim
-
-let mapleader = " "
-nnoremap <leader>l gt
-nnoremap <leader>h gT
-nnoremap <leader>q :q<CR>
-nnoremap <leader><leader> :action Run<CR>

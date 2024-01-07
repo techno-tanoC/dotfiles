@@ -9,14 +9,15 @@ ln -sf ~/dotfiles/git/gitconfig ~/.gitconfig
 ln -sf ~/dotfiles/zsh/zshrc ~/.zshrc
 
 # vim
-install_plugins() {
+install_packages() {
+  # https://vim-jp.org/vimdoc-ja/repeat.html#packages
   curl https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim > ~/.vim/colors/molokai.vim
   git clone https://github.com/preservim/nerdtree.git ~/.vim/pack/vendor/start/nerdtree
   git clone https://github.com/tomtom/tcomment_vim ~/.vim/pack/tml/start/tcomment_vim
   git clone https://github.com/itchyny/lightline.vim ~/.vim/pack/plugins/start/lightline
   git clone https://github.com/Yggdroot/indentLine.git ~/.vim/pack/vendor/start/indentLine
 }
-install_plugins
+install_packages
 ln -sf ~/dotfiles/vim/vimrc ~/.vimrc
 ln -sf ~/dotfiles/vim/ideavimrc ~/.ideavimrc
 

@@ -1,25 +1,13 @@
-#
-# Executes commands at the start of an interactive session.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
-
-# zmodload zsh/zprof && zprof
-
-if [ -f /etc/profile.d/vte.sh ]; then
-  . /etc/profile.d/vte.sh
-fi
-
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Customize to your needs...
+# Set basic envs
 export PATH=$HOME/bin:$PATH
 export EDITOR=vim
 
+# Set vi mode and basic keybinds
 bindkey -v
 bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
@@ -27,7 +15,6 @@ bindkey '^F' forward-word
 bindkey '^B' backward-word
 
 dir=~/dotfiles/zsh
-source "${dir}/tool.sh"
 source "${dir}/alias.sh"
-source "${dir}/peco.sh"
 source "${dir}/prompt.sh"
+source "${dir}/tool.sh"

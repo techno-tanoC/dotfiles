@@ -1,35 +1,14 @@
 alias rm="nocorrect rm"
+alias mv="nocorrect mv"
 alias la="ls -alh"
 alias ll="ls -al"
-alias lq="ls -Qm"
-alias rgf="rg --files | rg"
-function color {
-  grep --color -E "$1|$" $2
-}
-
-alias openssl-connect="echo | openssl s_client -connect"
 
 # paccache -rk5: 5世代を残してキャッシュを消す
 # paccache -ruk0: アンインストールされたものの全世代を消す
 alias yay-upgrade="yay -Syu; paccache -rk5; paccache -ruk0"
 
-function base64_from_stdin() {
-  echo $1 | base64 -
-}
-
-function hash() {
-  sha1sum $1 | awk '{ print $1 }'
-}
-
-function git-name-date-hash() {
-  n=$(basename $(git rev-parse --show-toplevel))
-  d=$(date '+%F')
-  h=$(git log --pretty=format:'%h' | head -n 1)
-  echo "${n}-${d}-${h}"
-}
-
-exists() { command -v "$1" > /dev/null; }
-
+# open, pbcopy and pbpaste
+function exists() { command -v "$1" > /dev/null; }
 if ! exists open ; then
   alias open="xdg-open"
 fi
@@ -39,16 +18,6 @@ fi
 if ! exists pbpaste ; then
   alias pbpaste="xsel --clipboard --output"
 fi
-
-function gcp-project() {
-  projData=$(gcloud config configurations list | sed '1d' | peco)
-  if echo "${projData}" | grep -E "^[a-zA-Z].*" > /dev/null ; then
-    config=$(echo ${projData} | awk '{print $1}')
-    gcloud config configurations activate ${config}
-    # gcloud config configurations list | grep "${config}"
-  fi
-}
-
 
 # git
 function git_current_branch() {
@@ -93,13 +62,6 @@ alias dcr="docker compose run --rm"
 alias dcra="docker compose run --rm app"
 alias dce="docker compose exec"
 alias dcea="docker compose exec app"
-function dme() { eval $(docker-machine env $1) }
-function dmu() { eval $(docker-machine env -u) }
-
-# ruby
-alias be="bundle exec"
-alias bf="bundle exec foreman run"
-alias biv="bundle install --jobs=4"
 
 # k8s
 alias k="kubectl"
@@ -109,12 +71,18 @@ alias k-debug="k run -it debug --image=techno/nettool --rm --restart=Never -- as
 alias kind-create="kind create cluster --config ~/k8s/cluster.yaml"
 alias kind-delete="kind delete cluster"
 
-# terraform
-alias t="terraform"
-alias tfmt="terraform fmt -recursive"
+# awscli
+alias a="aws"
 
 # gcloud
 alias g="gcloud"
+function switch-gcp-project() {
+  projData=$(gcloud config configurations list | sed '1d' | peco)
+  if echo "${projData}" | grep -E "^[a-zA-Z].*" > /dev/null ; then
+    config=$(echo ${projData} | awk '{print $1}')
+    gcloud config configurations activate ${config}
+  fi
+}
 
 # youtube-dl
 function best-youtube() {

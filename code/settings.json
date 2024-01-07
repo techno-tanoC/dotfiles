@@ -1,0 +1,57 @@
+{
+    "workbench.colorTheme": "Default Dark Modern",
+    "workbench.iconTheme": "material-icon-theme",
+    "explorer.confirmDragAndDrop": false,
+    "editor.bracketPairColorization.enabled": true,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+
+    // Languages
+    "[rust]": {
+        "editor.tabSize": 4
+    },
+    "[yaml]": {
+        "editor.tabSize": 2
+    },
+    "[ruby]": {
+        "editor.tabSize": 2
+    },
+
+    // Vim
+    "vim.leader": "<space>",
+    "vim.normalModeKeyBindingsNonRecursive": [{
+        "before": ["leader", "leader"],
+        "commands": ["workbench.action.quickOpen"]
+    }, {
+        "before": ["leader", "q"],
+        "commands": ["workbench.action.closeActiveEditor"]
+    }, {
+        "before": ["leader", "l"],
+        "commands": ["workbench.action.nextEditor"]
+    }, {
+        "before": ["leader", "h"],
+        "commands": ["workbench.action.previousEditor"]
+    }, {
+        "before": ["leader", "L"],
+        "commands": ["workbench.action.focusNextGroup"]
+    }, {
+        "before": ["leader", "H"],
+        "commands": ["workbench.action.focusPreviousGroup"]
+    }, {
+        "before": ["leader", "<C-l>"],
+        "commands": ["workbench.action.moveEditorToNextGroup"]
+    }, {
+        "before": ["leader", "<C-h>"],
+        "commands": ["workbench.action.moveEditorToPreviousGroup"]
+    }, {
+        "before": ["<C-e>"],
+        "commands": ["workbench.action.toggleSidebarVisibility"]
+    }, {
+        "before": ["<C-n>"],
+        "commands": ["workbench.action.files.newUntitledFile"]
+    }],
+
+    // Dev containers
+    "dotfiles.repository": "https://github.com/techno-tanoC/dotfiles.git",
+    "dotfiles.installCommand": "~/dotfiles/remote_container/install.sh",
+}

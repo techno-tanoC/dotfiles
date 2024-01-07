@@ -43,23 +43,39 @@ re-prompt() {
 # コマンド実行時にプロンプトを再表示
 zle -N accept-line re-prompt
 
-if [ -f "$HOME/bin/kube-ps1.sh" ]; then
-  source "$HOME/bin/kube-ps1.sh"
-fi
-if [ -f "/opt/kube-ps1/kube-ps1.sh" ]; then
-  source "/opt/kube-ps1/kube-ps1.sh"
-fi
-if [ -f "/usr/local/opt/kube-ps1/share/kube-ps1.sh" ]; then
-  source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
-fi
-
-which kube_ps1 > /dev/null
-if [ $? -eq 0 ]; then
-  PROMPT='%D{%Y-%m-%d %H:%M:%S} $(git-current-branch)$(kube_ps1)
+PROMPT='%D{%Y-%m-%d %H:%M:%S} $(git-current-branch)
 ${SSH_TTY:+"%F{9}%n%f%F{7}@%f%F{3}%m%f "}%~${editor_info[keymap]} '
-else
-  PROMPT='%D{%Y-%m-%d %H:%M:%S} $(git-current-branch)
-${SSH_TTY:+"%F{9}%n%f%F{7}@%f%F{3}%m%f "}%~${editor_info[keymap]} '
-fi
-
 RPROMPT=''
+
+## enterをおした時にgit status
+function do_enter() {
+  if [ -n "$BUFFER" ]; then
+    zle accept-line
+    return 0
+  fi
+  echo
+  echo
+  # ↓おすすめ
+  # ls_abbrev
+  if [ "$(git rev-parse --is-inside-work-tree 2> /dev/null)" = 'true' ]; then
+    echo -e "\e[0;33m--- git status ---\e[0m"
+    git status -sb
+    echo "
+    "
+  fi
+  zle reset-prompt
+  return 0
+}
+
+zle -N do_enter
+bindkey '^m' do_enter
+
+# peco history
+function peco-history-selection() {
+  BUFFER=`history -n 1 | sort -k1,1nr | awk '!a[$0]++' | peco`
+  CURSOR=$#BUFFER
+  zle reset-prompt
+}
+
+zle -N peco-history-selection
+bindkey '^R' peco-history-selection

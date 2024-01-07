@@ -17,6 +17,9 @@ rbenv() {
   $0 "$@"
 }
 
+# direnv
+eval "$(direnv hook zsh)"
+
 # docker
 export COMPOSE_DOCKER_CLI_BUILD=1
 export DOCKER_BUILDKIT=1
@@ -28,11 +31,6 @@ kubectl() {
   source <(kubectl completion zsh | sed '/"-f"/d')
   $0 "$@"
 }
-kubesec() {
-  unfunction "$0"
-  source <(kubesec completion zsh)
-  $0 "$@"
-}
 helm() {
   unfunction "$0"
   source <(helm completion zsh)
@@ -41,22 +39,17 @@ helm() {
 
 # aws
 # https://docs.aws.amazon.com/ja_jp/cli/latest/userguide/cli-configure-completion.html
-autoload bashcompinit && bashcompinit
-complete -C $(which aws_completer) aws
+aws() {
+  unfunction "$0"
+  autoload bashcompinit && bashcompinit
+  complete -C $(which aws_completer) aws
+  $0 "$@"
+}
 
 # gcloud
-source "$(asdf where gcloud)/path.zsh.inc"
-source "$(asdf where gcloud)/completion.zsh.inc"
-
-# node
-export PATH="$(npm bin -g 2> /dev/null)/:$PATH"
-
-# go
-# https://zenn.dev/tennashi/articles/3b87a8d924bc9c43573e
-export GO111MODULE=on
-export GOBIN=$HOME/bin/go
-export GOMODCACHE=$HOME/.cache/go_mod
-export PATH=$GOBIN:$PATH
-
-# direnv
-eval "$(direnv hook zsh)"
+gcloud() {
+  unfunction "$0"
+  source "$(asdf where gcloud)/path.zsh.inc"
+  source "$(asdf where gcloud)/completion.zsh.inc"
+  $0 "$@"
+}

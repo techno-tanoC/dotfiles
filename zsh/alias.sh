@@ -76,3 +76,15 @@ alias a="aws"
 
 # gcloud
 alias g="gcloud"
+function switch-gcp-project() {
+  projData=$(gcloud config configurations list | sed '1d' | peco)
+  if echo "${projData}" | grep -E "^[a-zA-Z].*" > /dev/null ; then
+    config=$(echo ${projData} | awk '{print $1}')
+    gcloud config configurations activate ${config}
+  fi
+}
+
+# youtube-dl
+function best-youtube() {
+  youtube-dl --merge-output-format mp4 -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best" $1
+}

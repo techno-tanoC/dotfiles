@@ -6,3 +6,6 @@ fi
 # Set basic envs
 export PATH=$HOME/bin:$PATH
 export EDITOR=vim
+
+dir=~/dotfiles/zsh
+source "${dir}/alias.sh"

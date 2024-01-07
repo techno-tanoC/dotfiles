@@ -39,9 +39,17 @@ helm() {
 
 # aws
 # https://docs.aws.amazon.com/ja_jp/cli/latest/userguide/cli-configure-completion.html
-autoload bashcompinit && bashcompinit
-complete -C $(which aws_completer) aws
+aws() {
+  unfunction "$0"
+  autoload bashcompinit && bashcompinit
+  complete -C $(which aws_completer) aws
+  $0 "$@"
+}
 
 # gcloud
-source "$(asdf where gcloud)/path.zsh.inc"
-source "$(asdf where gcloud)/completion.zsh.inc"
+gcloud() {
+  unfunction "$0"
+  source "$(asdf where gcloud)/path.zsh.inc"
+  source "$(asdf where gcloud)/completion.zsh.inc"
+  $0 "$@"
+}

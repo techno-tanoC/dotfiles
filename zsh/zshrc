@@ -7,6 +7,13 @@ fi
 export PATH=$HOME/bin:$PATH
 export EDITOR=vim
 
+# Set vi mode and basic keybinds
+bindkey -v
+bindkey '^A' beginning-of-line
+bindkey '^E' end-of-line
+bindkey '^F' forward-word
+bindkey '^B' backward-word
+
 dir=~/dotfiles/zsh
 source "${dir}/alias.sh"
 source "${dir}/prompt.sh"

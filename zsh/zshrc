@@ -11,7 +11,7 @@ export EDITOR=vim
 bindkey -v
 bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
-bindkey '^F' forward-word
+bindkey '^W' forward-word
 bindkey '^B' backward-word
 
 dir=~/dotfiles/zsh

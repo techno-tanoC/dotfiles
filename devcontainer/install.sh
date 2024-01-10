@@ -1,2 +1,14 @@
 #!/bin/bash
-cat ~/dotfiles/devcontainer/bashrc >> ~/.bashrc
+# VSCode dotfiles install script
+
+cat <<EOF >> ~/.bashrc
+alias la="ls -alh"
+alias ll="ls -al"
+
+alias t="terraform"
+alias tfmt="terraform fmt -recursive"
+
+alias p="pulumi"
+alias pu="pulumi up --refresh --diff"
+alias pp="pulumi preview --refresh --diff"
+EOF

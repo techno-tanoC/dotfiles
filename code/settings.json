@@ -52,6 +52,8 @@
     }],
 
     // Dev containers
+    // installCommand には ~ を使えない？
     "dotfiles.repository": "https://github.com/techno-tanoC/dotfiles.git",
-    "dotfiles.installCommand": "~/dotfiles/remote_container/install.sh",
+    "dotfiles.targetPath": "~/dotfiles",
+    "dotfiles.installCommand": "devcontainer/install.sh",
 }

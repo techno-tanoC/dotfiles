@@ -27,10 +27,10 @@
         "commands": ["workbench.action.closeActiveEditor"]
     }, {
         "before": ["leader", "l"],
-        "commands": ["workbench.action.nextEditor"]
+        "commands": ["workbench.action.nextEditorInGroup"]
     }, {
         "before": ["leader", "h"],
-        "commands": ["workbench.action.previousEditor"]
+        "commands": ["workbench.action.previousEditorInGroup"]
     }, {
         "before": ["leader", "L"],
         "commands": ["workbench.action.focusNextGroup"]

@@ -11,4 +11,5 @@ alias tfmt="terraform fmt -recursive"
 alias p="pulumi"
 alias pu="pulumi up --refresh --diff"
 alias pp="pulumi preview --refresh --diff"
+alias pi="pulumi import --protect=false --yes"
 EOF

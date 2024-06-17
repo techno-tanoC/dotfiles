@@ -4,7 +4,7 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Set basic envs
-export PATH=$HOME/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 export EDITOR=vim
 
 # Set vi mode and basic keybinds
@@ -18,3 +18,5 @@ dir=~/dotfiles/zsh
 source "${dir}/alias.sh"
 source "${dir}/prompt.sh"
 source "${dir}/tool.sh"
+
+setopt hist_ignore_space

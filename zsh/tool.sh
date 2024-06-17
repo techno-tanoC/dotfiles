@@ -1,12 +1,6 @@
-# asdf
-if [ -f $HOME/.asdf/asdf.sh ]; then
-  . $HOME/.asdf/asdf.sh
-  # append completions to fpath
-  fpath=(${ASDF_DIR}/completions $fpath)
-  # initialise completions with ZSH's compinit
-  autoload -Uz compinit
-  compinit
-fi
+# mise
+eval "$(mise activate zsh)"
+eval "$(mise completion zsh)"
 
 # ruby
 export PATH="$HOME/.rbenv/bin:$PATH"

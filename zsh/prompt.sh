@@ -43,8 +43,14 @@ re-prompt() {
 # コマンド実行時にプロンプトを再表示
 zle -N accept-line re-prompt
 
-PROMPT='%D{%Y-%m-%d %H:%M:%S} $(git-current-branch)
+if [ -e "/opt/homebrew/opt/kube-ps1/share/kube-ps1.sh" ]; then
+    source "/opt/homebrew/opt/kube-ps1/share/kube-ps1.sh"
+    PROMPT='%D{%Y-%m-%d %H:%M:%S} $(git-current-branch) $(kube_ps1)
 ${SSH_TTY:+"%F{9}%n%f%F{7}@%f%F{3}%m%f "}%~${editor_info[keymap]} '
+else
+    PROMPT='%D{%Y-%m-%d %H:%M:%S} $(git-current-branch)
+${SSH_TTY:+"%F{9}%n%f%F{7}@%f%F{3}%m%f "}%~${editor_info[keymap]} '
+fi
 RPROMPT=''
 
 ## enterをおした時にgit status

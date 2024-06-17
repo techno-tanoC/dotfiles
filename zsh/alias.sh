@@ -68,7 +68,7 @@ alias k="kubectl"
 alias kx="kubectx"
 alias kn="kubens"
 alias k-debug="k run -it debug --image=techno/nettool --rm --restart=Never -- ash"
-alias kind-create="kind create cluster --config ~/k8s/cluster.yaml"
+alias kind-create="kind create cluster --config ~/containers/kind.yaml"
 alias kind-delete="kind delete cluster"
 
 # awscli

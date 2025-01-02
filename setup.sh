@@ -11,6 +11,7 @@ ln -sf ~/dotfiles/zsh/zshrc ~/.zshrc
 # vim
 install_packages() {
   # https://vim-jp.org/vimdoc-ja/repeat.html#packages
+  mkdir -p ~/.vim/colors/
   curl https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim > ~/.vim/colors/molokai.vim
   git clone https://github.com/preservim/nerdtree.git ~/.vim/pack/vendor/start/nerdtree
   git clone https://github.com/tomtom/tcomment_vim ~/.vim/pack/tml/start/tcomment_vim

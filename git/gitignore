@@ -3,3 +3,5 @@ ignore
 tmp
 temp
 .DS_Store
+.anchor
+worktrees

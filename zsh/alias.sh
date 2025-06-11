@@ -71,6 +71,14 @@ alias k-debug="k run -it debug --image=techno/nettool --rm --restart=Never -- as
 alias kind-create="kind create cluster --config ~/containers/kind.yaml"
 alias kind-delete="kind delete cluster"
 
+# terraform
+alias t="terraform"
+alias tim="terraform init -migrate-state"
+alias tir="terraform init -reconfigure"
+alias tp="terraform plan"
+alias ta="terraform apply"
+alias tfmt="terraform fmt -diff -recursive"
+
 # awscli
 alias a="aws"
 

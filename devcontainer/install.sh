@@ -6,12 +6,11 @@ alias la="ls -alh"
 alias ll="ls -al"
 
 alias t="terraform"
-alias tfmt="terraform fmt -recursive"
-
-alias p="pulumi"
-alias pu="pulumi up --refresh --diff"
-alias pp="pulumi preview --refresh --diff"
-alias pi="pulumi import --protect=false --yes"
+alias tim="terraform init -migrate-state"
+alias tir="terraform init -reconfigure"
+alias tp="terraform plan"
+alias ta="terraform apply"
+alias tfmt="terraform fmt -diff -recursive"
 EOF
 
 mkdir -p ~/.config/git/
